@@ -1,0 +1,485 @@
+  <!DOCTYPE html>
+  <html lang="de">
+    <head>
+    <meta charset="UTF-8" />
+
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+      <style>
+@keyframes slideInLeft {
+  0% { opacity: 0; transform: translateX(-80px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideOutLeft {
+  0% { opacity: 1; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(-80px); }
+}
+
+@keyframes slideInRight {
+  0% { opacity: 0; transform: translateX(80px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideOutRight {
+  0% { opacity: 1; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(80px); }
+}
+
+/* Basis: Unsichtbar */
+.fade-in, .fade-in-delay, .fade-in-delay-2 {
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* Oben-Text: von links */
+.fade-in.visible {
+  animation: slideInLeft 0.4s ease-out forwards;
+}
+.fade-in:not(.visible) {
+  animation: slideOutLeft 0.4s ease-in forwards;
+}
+
+/* Mitte-Rechts-Text: von rechts */
+.fade-in-delay.visible {
+  animation: slideInRight 0.4s ease-out forwards;
+}
+.fade-in-delay:not(.visible) {
+  animation: slideOutRight 0.4s ease-in forwards;
+}
+
+/* Unten-Links-Text: von links */
+.fade-in-delay-2.visible {
+  animation: slideInLeft 0.4s ease-out forwards;
+}
+.fade-in-delay-2:not(.visible) {
+  animation: slideOutLeft 0.4s ease-in forwards;
+}
+</style>
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Nike Tailwind</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="font-sans bg-white text-black">
+
+  <!-- Navbar: zentriertes Logo mit horizontalen Buttons darunter -->
+  <header class="bg-black text-white px-6 py-4">
+    <div class="flex justify-between items-center flex-wrap">
+
+      <!-- Linke Seite: Logo -->
+      <div class="flex-shrink-0">
+        <img src="nikelogo.jpeg" alt="Nike Logo" class="h-12">
+      </div>
+
+      <!-- Navigation zentriert -->
+      <nav class="flex-1">
+        <ul class="flex justify-center gap-6 text-sm">
+          <li><a href="#" class="hover:underline">Neues</a></li>
+          <li><a href="#" class="hover:underline">Herren</a></li>
+          <li><a href="#" class="hover:underline">Damen</a></li>
+          <li><a href="#" class="hover:underline">Kinder</a></li>
+          <li><a href="#" class="hover:underline">Angebote</a></li>
+        </ul>
+      </nav>
+
+      <!-- Rechte Seite: Suche + Icons -->
+      <div class="flex items-center gap-3">
+        <input type="text" placeholder="Suche" class="px-2 py-1 rounded text-black text-sm w-24 sm:w-32">
+        <a href="#" class="text-white text-lg" title="Favoriten">&#10084;</a>
+        <a href="#" class="text-white text-lg" title="Warenkorb">&#128722;</a>
+      </div>
+
+    </div>
+  </header>
+
+
+
+
+
+<!-- Hero Slideshow -->
+<section class="relative w-full h-screen overflow-hidden">
+  <div id="slides" class="w-full h-full relative">
+    <div class="slide absolute inset-0 transition-opacity duration-700 opacity-100">
+      <img src="alpineStock1.jpg" class="object-cover w-full h-full" alt="Slide 1">
+    </div>
+    <div class="slide absolute inset-0 transition-opacity duration-700 opacity-0">
+      <img src="Alpine2.jpg" class="object-cover w-full h-full" alt="Slide 2">
+    </div>
+    <div class="slide absolute inset-0 transition-opacity duration-700 opacity-0">
+      <img src="Gemini_Generated_Image_frau.jpeg" class="object-cover w-full h-full" alt="Slide 3">
+    </div>
+  </div>
+
+  <!-- Call to Action Overlay -->
+  <div class="absolute inset-0 flex flex-col justify-center items-center text-white bg-black bg-opacity-30 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Sicherer und komfortabler wandern</h1>
+    <p class="text-lg md:text-xl mb-6">Entdecken Sie unsere ergonomischen Gehstöcke</p>
+    <a href="#" class="inline-block bg-white text-black px-6 py-3 font-semibold rounded hover:bg-gray-200">Jetzt entdecken</a>
+  </div>
+
+  <!-- Dots -->
+  <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+    <button class="dot w-2 h-2 rounded-full bg-white opacity-50" onclick="showSlide(0)"></button>
+    <button class="dot w-2 h-2 rounded-full bg-white opacity-50" onclick="showSlide(1)"></button>
+    <button class="dot w-2 h-2 rounded-full bg-white opacity-50" onclick="showSlide(2)"></button>
+  </div>
+</section>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.opacity = i === index ? '1' : '0';
+    });
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('opacity-100', i === index);
+      dot.classList.toggle('opacity-50', i !== index);
+    });
+    currentSlide = index;
+  }
+
+  setInterval(() => {
+    showSlide((currentSlide + 1) % slides.length);
+  }, 5000); // automatische Rotation alle 5 Sekunden
+</script>      
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center px-6 py-12">
+        <!-- Bild: Frau links -->
+        <div class="relative">
+          <img src="Gemini_Generated_Image_frau.jpeg" alt="Outdoor Frau" class="rounded-lg shadow-lg w-full h-auto">
+          
+          <!-- Modellname -->
+          <div class="absolute bottom-24 left-4 text-white text-sm font-medium drop-shadow">
+            FlexiLite-900
+          </div>
+          
+          <!-- Beschreibung -->
+          <div class="absolute bottom-16 left-4 text-white text-base font-semibold drop-shadow">
+            Performance für jedes Terrain
+          </div>
+          
+          <!-- CTA Button -->
+          <div class="absolute bottom-4 left-4">
+            <a href="#" class="bg-white bg-opacity-90 text-black px-3 py-1 text-sm font-medium rounded-full hover:bg-gray-200">Entdecken</a>
+          </div>
+        </div>
+      
+        <!-- Bild: Mann rechts -->
+        <div class="relative">
+          <img src="Gemini_Generated_Image_man.jpeg" alt="Outdoor Mann" class="rounded-lg shadow-lg w-full h-auto">
+          
+          <!-- Modellname -->
+          <div class="absolute bottom-24 left-4 text-white text-sm font-medium drop-shadow">
+            VertiCore
+          </div>
+          
+          <!-- Beschreibung -->
+          <div class="absolute bottom-16 left-4 text-white text-base font-semibold drop-shadow">
+            Maximale Power beim Aufstieg
+          </div>
+          
+          <!-- CTA Button -->
+          <div class="absolute bottom-4 left-4">
+            <a href="#" class="bg-white bg-opacity-90 text-black px-3 py-1 text-sm font-medium rounded-full hover:bg-gray-200">Entdecken</a>
+          </div>
+        </div>
+      </section>
+      
+      
+
+      <!-- Produkte -->
+      <section class="py-16 bg-gray-100 text-center">
+        <h2 class="text-3xl font-bold mb-8">Unsere Klassiker</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-8 mx-auto px-4">
+
+
+      
+      <!-- Bild: Frau mit Wanderstock -->
+      <div>
+        <div class="relative">
+          <img src="klappbarerTrekkingStock2.jpg" alt="Frau mit Wanderstock" class="w-full h-auto rounded-b-none">
+          
+          <!-- CTA-Button im Bild -->
+          <div class="absolute bottom-3 left-3">
+            <a href="#" class="bg-white text-black text-xs px-3 py-1 rounded-full font-medium hover:bg-gray-200 transition">SummitDrive</a>
+          </div>
+        </div>
+      
+      </div>
+
+
+      <div>
+        <div class="relative">
+          <img src="klappbarerTrekkingStock1.jpg" alt="Frau mit Wanderstock" class="w-full h-auto rounded-b-none">
+          
+          <!-- CTA-Button im Bild -->
+          <div class="absolute bottom-3 left-3">
+            <a href="#" class="bg-white text-black text-xs px-3 py-1 rounded-full font-medium hover:bg-gray-200 transition">TrekForce X</a>
+          </div>
+        </div>
+      
+      </div>
+
+
+      <div>
+        <div class="relative">
+          <img src="alpineStock1.jpg" alt="Frau mit Wanderstock" class="w-full h-auto rounded-b-none">
+          
+          <!-- CTA-Button im Bild -->
+          <div class="absolute bottom-3 left-3">
+            <a href="#" class="bg-white text-black text-xs px-3 py-1 rounded-full font-medium hover:bg-gray-200 transition">LexiStock Pro</a>
+          </div>
+        </div>
+      
+      </div>
+
+      <div>
+        <div class="relative">
+          <img src="Stock1.png" alt="Frau mit Wanderstock" class="w-full h-auto rounded-b-none">
+          
+          <!-- CTA-Button im Bild -->
+          <div class="absolute bottom-3 left-3">
+            <a href="#" class="bg-white text-black text-xs px-3 py-1 rounded-full font-medium hover:bg-gray-200 transition">TrailGrip</a>
+          </div>
+        </div>
+      
+      </div>
+
+      <div>
+        <div class="relative">
+          <img src="Stock2.png" alt="Frau mit Wanderstock" class="w-full h-auto rounded-b-none">
+          
+          <!-- CTA-Button im Bild -->
+          <div class="absolute bottom-3 left-3">
+            <a href="#" class="bg-white text-black text-xs px-3 py-1 rounded-full font-medium hover:bg-gray-200 transition">PowerStep 360</a>
+          </div>
+        </div>
+      
+      </div>
+  </div>
+  </section>
+
+<section class="grid grid-cols-[1fr_4fr_1fr] grid-rows-3 gap-0 w-full px-8 py-20 min-h-[800px]">
+  <!-- Text links oben -->
+  <div class="col-start-1 row-start-1 self-start transform -translate-x-1/2 fade-in-delay-2">
+    <h3 class="text-lg font-bold">Ergonomischer Griff</h3>
+    <p class="text-sm mt-1">
+    Unsere Wanderstöcke sind mit einem ergonomischen, rutschfesten Griff aus schweißabsorbierendem EVA-Schaum mit Naturkork-Einsatz ausgestattet, der maximalen Komfort auch bei langen Wanderungen garantiert.
+    </p>
+  </div>
+
+<div class="col-start-2 row-span-3 flex justify-center items-center w-full h-full">
+  <model-viewer
+    src="hiking_poles.glb"
+    alt="3D Wanderstock"
+    auto-rotate
+    camera-controls
+  class="w-full h-full max-w-[100%] max-h-[100%] object-contain">
+  </model-viewer>
+</div>
+
+
+
+  <div class="col-start-3 row-start-2 self-center text-left transform -translate-y-1/2 fade-in-delay">
+    <h3 class="text-lg font-bold">Stoßdämpfung & Flexibilität</h3>
+    <p class="text-sm mt-1">
+    Unsere Wanderstöcke bestehen aus robustem Carbon oder Aluminium, das für Stabilität und Leichtigkeit sorgt für jedes Gelände.</p>
+  </div>
+
+   <div class="col-start-1 row-start-3 self-end transform -translate-x-1/2 fade-in-delay-2">
+    <h3 class="text-lg font-bold">Qualität der Spitze</h3>
+    <p class="text-sm mt-1">
+      Hochfester Einsatz für sicheren Halt auf Stein, Schlamm oder Schnee.
+    </p>
+  </div>
+
+</section>
+
+<!-- Rezensionen -->
+<section class="py-16 bg-white text-center px-4">
+  <h2 class="text-3xl font-bold mb-8">Die Kunden sagen</h2>
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-8">
+    
+    <!-- Linke Seite: Allgemeine Kundenrezensionen mit Prozentbalken -->
+    <div class="md:w-1/3 text-left space-y-4">
+      <h3 class="text-2xl font-semibold">Allgemeine Bewertungen</h3>
+      <div class="space-y-2">
+        <div class="flex items-center gap-2 mt-2">
+          <div class="text-yellow-500 text-xl">★★★★☆</div>
+          <span class="text-sm text-gray-600">4,6 von 5 Sternen</span>
+        </div>
+        <p class="text-xs text-gray-600 mt-1">1.245 weltweite Bewertungen</p>
+      </div>
+
+      <!-- Text-Buttons für Bewertungen und Prozent (Orange Balken) -->
+      <div class="space-y-2 mt-4 text-sm">
+        <div class="flex items-center gap-2">
+          <button class="text-blue-500 hover:underline focus:outline-none">5 Sterne</button>
+          <div class="w-3/4 bg-gray-200 rounded">
+            <div class="bg-yellow-500 h-3 rounded" style="width: 60%;"></div>
+          </div>
+          <button class="text-blue-500 hover:underline focus:outline-none">60%</button>
+        </div>
+        <div class="flex items-center gap-2">
+          <button class="text-blue-500 hover:underline focus:outline-none">4 Sterne</button>
+          <div class="w-3/4 bg-gray-200 rounded">
+            <div class="bg-yellow-500 h-3 rounded" style="width: 30%;"></div>
+          </div>
+          <button class="text-blue-500 hover:underline focus:outline-none">30%</button>
+        </div>
+        <div class="flex items-center gap-2">
+          <button class="text-blue-500 hover:underline focus:outline-none">3 Sterne</button>
+          <div class="w-3/4 bg-gray-200 rounded">
+            <div class="bg-yellow-500 h-3 rounded" style="width: 8%;"></div>
+          </div>
+          <button class="text-blue-500 hover:underline focus:outline-none">8%</button>
+        </div>
+        <div class="flex items-center gap-2">
+          <button class="text-blue-500 hover:underline focus:outline-none">2 Sterne</button>
+          <div class="w-3/4 bg-gray-200 rounded">
+            <div class="bg-yellow-500 h-3 rounded" style="width: 2%;"></div>
+          </div>
+          <button class="text-blue-500 hover:underline focus:outline-none">2%</button>
+        </div>
+        <div class="flex items-center gap-2">
+          <button class="text-blue-500 hover:underline focus:outline-none">1 Stern</button>
+          <div class="w-3/4 bg-gray-200 rounded">
+            <div class="bg-yellow-500 h-3 rounded" style="width: 0%;"></div>
+          </div>
+          <button class="text-blue-500 hover:underline focus:outline-none">0%</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rechte Seite: Kundenrezensionen -->
+    <div class="md:w-2/3 space-y-8">
+      <!-- Rezension 1: 4.5 Sterne -->
+      <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+        <div class="flex justify-center mb-2 text-yellow-500 text-sm">
+          ★★★★☆ 
+        </div>
+        <p class="text-sm italic">"Diese Wanderstöcke sind ein absoluter Game-Changer! Super leicht und stabil. Perfekt für lange Touren."</p>
+        <div class="flex justify-between mt-2 text-xs text-gray-600">
+          <p>– Lara S.</p>
+          <p>Vor 3 Tagen</p>
+        </div>
+      </div>
+
+      <!-- Rezension 2: 4.5 Sterne -->
+      <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+        <div class="flex justify-center mb-2 text-yellow-500 text-sm">
+          ★★★★☆ 
+        </div>
+        <p class="text-sm italic">"Ich liebe den ergonomischen Griff – selbst bei Regen bleibt alles rutschfest und sicher!"</p>
+        <div class="flex justify-between mt-2 text-xs text-gray-600">
+          <p>– Markus W.</p>
+          <p>Vor 5 Tagen</p>
+        </div>
+      </div>
+
+      <!-- Rezension 3: 5 Sterne -->
+      <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+        <div class="flex justify-center mb-2 text-yellow-500 text-sm">
+          ★★★★★
+        </div>
+        <p class="text-sm italic">"Einfach perfekt für meine Wanderabenteuer. Leicht, robust und super anpassbar!"</p>
+        <div class="flex justify-between mt-2 text-xs text-gray-600">
+          <p>– Anja B.</p>
+          <p>Vor 1 Woche</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      <!-- Footer -->
+      <footer class="bg-gray-100 py-12 text-sm text-black">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+      
+          <!-- Spalte 1: Ressourcen -->
+          <div>
+            <h3 class="font-bold mb-4">Ressourcen</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:underline">Geschenkgutscheine</a></li>
+              <li><a href="#" class="hover:underline">Geschenkgutscheine für Firmen</a></li>
+              <li><a href="#" class="hover:underline">Store suchen</a></li>
+              <li><a href="#" class="hover:underline">Nike Journal</a></li>
+              <li><a href="#" class="hover:underline">Member werden</a></li>
+              <li><a href="#" class="hover:underline">Studentenrabatt</a></li>
+              <li><a href="#" class="hover:underline">Feedback</a></li>
+              <li><a href="#" class="hover:underline">Aktionscodes</a></li>
+            </ul>
+          </div>
+      
+          <!-- Spalte 2: Hilfe -->
+          <div>
+            <h3 class="font-bold mb-4">Hilfe</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:underline">Hilfe</a></li>
+              <li><a href="#" class="hover:underline">Bestellstatus</a></li>
+              <li><a href="#" class="hover:underline">Versand und Lieferung</a></li>
+              <li><a href="#" class="hover:underline">Rückgaben</a></li>
+              <li><a href="#" class="hover:underline">Zahlungsoptionen</a></li>
+              <li><a href="#" class="hover:underline">Kontakt</a></li>
+              <li><a href="#" class="hover:underline">Bewertungen</a></li>
+              <li><a href="#" class="hover:underline">Nike Aktionscodes – Hilfe</a></li>
+            </ul>
+          </div>
+      
+          <!-- Spalte 3: Unternehmen -->
+          <div>
+            <h3 class="font-bold mb-4">Unternehmen</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:underline">Über Nike</a></li>
+              <li><a href="#" class="hover:underline">Neuigkeiten</a></li>
+              <li><a href="#" class="hover:underline">Karriere</a></li>
+              <li><a href="#" class="hover:underline">Investoren</a></li>
+              <li><a href="#" class="hover:underline">Nachhaltigkeit</a></li>
+              <li><a href="#" class="hover:underline">Barrierefreiheit</a></li>
+              <li><a href="#" class="hover:underline">Mission</a></li>
+              <li><a href="#" class="hover:underline">Bedenken melden</a></li>
+            </ul>
+          </div>
+      
+        </div>
+      
+      <!-- Copyright und rechtlicher Hinweis -->
+    <div class="text-center mt-10 text-gray-600">
+      <p>&copy; 2025 Nike, Inc. Alle Rechte vorbehalten.</p>
+      <div class="flex flex-wrap justify-center gap-4 mt-2">
+        <a href="#" class="hover:underline">Impressum</a>
+        <a href="#" class="hover:underline">Datenschutz</a>
+        <a href="#" class="hover:underline">Kontakt</a>
+        <a href="#" class="hover:underline">Guides</a>
+        <a href="#" class="hover:underline">Nutzungsbedingungen</a>
+        <a href="#" class="hover:underline">Verkaufsbedingungen</a>
+        <a href="#" class="hover:underline">Datenschutz- und Cookie-Richtlinie</a>
+        <a href="#" class="hover:underline">Datenschutz- und Cookie-Einstellung</a>
+      </div>
+    </div>
+
+      </footer>
+    <script>
+const faders = document.querySelectorAll('.fade-in, .fade-in-delay, .fade-in-delay-2');
+
+const appearOnScroll = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    } else {
+      entry.target.classList.remove('visible');
+    }
+  });
+}, { threshold: 0.3 });
+
+faders.forEach(el => appearOnScroll.observe(el));
+</script>
+
+
+
+    </body>
+  </html>
