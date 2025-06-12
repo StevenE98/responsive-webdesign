@@ -8,63 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <!-- Google Font: Poppins -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-<style>
-  /* Schrift für gesamte Seite */
-  body {
-    font-family: 'Poppins', sans-serif;
-  }
-
-  @keyframes slideInLeft {
-    0% { opacity: 0; transform: translateX(-80px); }
-    100% { opacity: 1; transform: translateX(0); }
-  }
-
-  @keyframes slideOutLeft {
-    0% { opacity: 1; transform: translateX(0); }
-    100% { opacity: 0; transform: translateX(-80px); }
-  }
-
-  @keyframes slideInRight {
-    0% { opacity: 0; transform: translateX(80px); }
-    100% { opacity: 1; transform: translateX(0); }
-  }
-
-  @keyframes slideOutRight {
-    0% { opacity: 1; transform: translateX(0); }
-    100% { opacity: 0; transform: translateX(80px); }
-  }
-
-  .fade-in, .fade-in-delay, .fade-in-delay-2 {
-    opacity: 0;
-    animation-fill-mode: forwards;
-  }
-
-  .fade-in.visible {
-    animation: slideInLeft 0.4s ease-out forwards;
-  }
-
-  .fade-in:not(.visible) {
-    animation: slideOutLeft 0.4s ease-in forwards;
-  }
-
-  .fade-in-delay.visible {
-    animation: slideInRight 0.4s ease-out forwards;
-  }
-
-  .fade-in-delay:not(.visible) {
-    animation: slideOutRight 0.4s ease-in forwards;
-  }
-
-  .fade-in-delay-2.visible {
-    animation: slideInLeft 0.4s ease-out forwards;
-  }
-
-  .fade-in-delay-2:not(.visible) {
-    animation: slideOutLeft 0.4s ease-in forwards;
-  }
-</style>
-
+<link rel="stylesheet" href="style.css">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Nike | Wanderstock online kaufen</title>
       <script src="https://cdn.tailwindcss.com"></script>
