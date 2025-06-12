@@ -198,4 +198,56 @@ body {
       gap: 0.5rem;
     }
   }
-  
+    /* Schrift für gesamte Seite */
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  @keyframes slideInLeft {
+    0% { opacity: 0; transform: translateX(-80px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes slideOutLeft {
+    0% { opacity: 1; transform: translateX(0); }
+    100% { opacity: 0; transform: translateX(-80px); }
+  }
+
+  @keyframes slideInRight {
+    0% { opacity: 0; transform: translateX(80px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes slideOutRight {
+    0% { opacity: 1; transform: translateX(0); }
+    100% { opacity: 0; transform: translateX(80px); }
+  }
+
+  .fade-in, .fade-in-delay, .fade-in-delay-2 {
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+
+  .fade-in.visible {
+    animation: slideInLeft 0.4s ease-out forwards;
+  }
+
+  .fade-in:not(.visible) {
+    animation: slideOutLeft 0.4s ease-in forwards;
+  }
+
+  .fade-in-delay.visible {
+    animation: slideInRight 0.4s ease-out forwards;
+  }
+
+  .fade-in-delay:not(.visible) {
+    animation: slideOutRight 0.4s ease-in forwards;
+  }
+
+  .fade-in-delay-2.visible {
+    animation: slideInLeft 0.4s ease-out forwards;
+  }
+
+  .fade-in-delay-2:not(.visible) {
+    animation: slideOutLeft 0.4s ease-in forwards;
+  }
