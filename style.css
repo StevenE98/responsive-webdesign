@@ -251,3 +251,10 @@ body {
   .fade-in-delay-2:not(.visible) {
     animation: slideOutLeft 0.4s ease-in forwards;
   }
+
+/* Monitors */
+@media (min-width: 1280px) {
+  html {
+    font-size: 18px;
+  }
+}
