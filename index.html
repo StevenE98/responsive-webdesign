@@ -477,15 +477,36 @@ faders.forEach(el => appearOnScroll.observe(el));
   });
 
   let animationFinished = false;
+  const pauseFrame = 41;
+  const fps = 30;
+  let pausedAtFrame = false;
 
   modelViewer.addEventListener('click', () => {
     if (animationFinished) {
       modelViewer.currentTime = 0;
       modelViewer.pause();
       animationFinished = false;
+      pausedAtFrame = false;
     } else if (modelViewer.paused && modelViewer.availableAnimations && modelViewer.availableAnimations.length > 0) {
       modelViewer.currentTime = 0;
       modelViewer.play({repetitions: 1});
+      pausedAtFrame = false;
+    }
+  });
+
+  modelViewer.addEventListener('timeupdate', () => {
+    if (!pausedAtFrame) {
+      const currentFrame = Math.floor(modelViewer.currentTime * fps);
+      if (currentFrame >= pauseFrame) {
+        pausedAtFrame = true;
+        const wasFinished = animationFinished;
+        modelViewer.pause();
+        setTimeout(() => {
+          if (!wasFinished) {
+            modelViewer.play();
+          }
+        }, 1000);
+      }
     }
   });
 
