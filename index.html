@@ -475,11 +475,22 @@ faders.forEach(el => appearOnScroll.observe(el));
     }
   });
 
+  let animationFinished = false;
+
   modelViewer.addEventListener('click', () => {
-    if (modelViewer.availableAnimations && modelViewer.availableAnimations.length > 0) {
+    if (animationFinished) {
+      modelViewer.currentTime = 0;
+      modelViewer.pause();
+      animationFinished = false;
+    } else if (modelViewer.paused && modelViewer.availableAnimations && modelViewer.availableAnimations.length > 0) {
       modelViewer.currentTime = 0;
       modelViewer.play({repetitions: 1});
     }
+  });
+
+  modelViewer.addEventListener('finished', () => {
+    animationFinished = true;
+    modelViewer.pause();
   });
 </script>
 
