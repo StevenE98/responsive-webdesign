@@ -258,3 +258,16 @@ body {
     font-size: 18px;
   }
 }
+
+/* Zoom effect for product images */
+.product-image-container {
+  overflow: hidden;
+}
+
+.product-image-container img {
+  transition: transform 0.3s ease;
+}
+
+.product-image-container:hover img {
+  transform: scale(1.2);
+}
