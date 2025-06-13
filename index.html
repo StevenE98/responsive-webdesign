@@ -478,7 +478,7 @@ faders.forEach(el => appearOnScroll.observe(el));
   modelViewer.addEventListener('click', () => {
     if (modelViewer.availableAnimations && modelViewer.availableAnimations.length > 0) {
       modelViewer.currentTime = 0;
-      modelViewer.play({repetitions: Infinity});
+      modelViewer.play({repetitions: 1});
     }
   });
 </script>
