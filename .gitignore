@@ -1,0 +1,24 @@
+# OS-specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*~
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+
+# Binary assets (use Git LFS or ignore)
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.pdf
+*.docx
+*.pptx
+*.glb
