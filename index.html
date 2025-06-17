@@ -459,18 +459,6 @@ faders.forEach(el => appearOnScroll.observe(el));
 <script>
   const modelViewer = document.getElementById('hikingModel');
 
-  const modelObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) {
-        // Reset camera when the model leaves the viewport
-        modelViewer.resetTurntableRotation();
-        modelViewer.removeAttribute('auto-rotate');
-      }
-    });
-  }, { threshold: 0.1 });
-
-  modelObserver.observe(modelViewer);
-
   // Animation control: play animation on click
   modelViewer.addEventListener('load', () => {
     if (modelViewer.availableAnimations && modelViewer.availableAnimations.length > 0) {
