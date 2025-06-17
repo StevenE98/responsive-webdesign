@@ -21,6 +21,11 @@ html, body {
   box-sizing: border-box;
 }
 
+/* Custom width for extra large monitors */
+.max-w-screen-3xl {
+  max-width: 1800px;
+}
+
 .fade-in-delay {
   opacity: 0;
   animation: fadeIn 1s ease-out forwards;
@@ -255,7 +260,13 @@ body {
 /* Monitors */
 @media (min-width: 1280px) {
   html {
-    font-size: 18px;
+    font-size: 19px;
+  }
+}
+
+@media (min-width: 1536px) {
+  html {
+    font-size: 20px;
   }
 }
 
