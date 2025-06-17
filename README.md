@@ -11,6 +11,7 @@ This repository contains a sample responsive web page demonstrating product pres
 2. Make sure all image files are placed inside the `Bilder` directory in the project root. The `hiking_poles.glb` 3D model should remain next to `index.html`.
 3. Open `index.html` in your web browser to view the page. For best results you can serve the files using a local web server.
 
+4. The 3D model loads zoomed in. Adjust the zoom using your mouse wheel or pinch gestures on touch devices.
 ## Required Assets
 
 The page expects several images stored in the `Bilder` folder and a glTF binary (`.glb`) model in the project root:

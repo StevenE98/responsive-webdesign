@@ -131,11 +131,10 @@
     src="hiking_poles3.glb"
     alt="3D Wanderstock"
     camera-controls
-    disable-zoom
 
-    camera-orbit="0deg 90deg auto"
-    min-camera-orbit="-60deg 60deg auto"
-    max-camera-orbit="60deg 120deg auto"
+    camera-orbit="0deg 90deg 3.5m"
+    min-camera-orbit="-60deg 60deg 2.5m"
+    max-camera-orbit="60deg 120deg 5m"
 
     class="w-full h-full max-w-[100%] max-h-[100%] object-contain">
   </model-viewer>
@@ -508,11 +507,8 @@ faders.forEach(el => appearOnScroll.observe(el));
 
   // Allow page scrolling when mouse wheel is used over the model
   modelViewer.addEventListener('wheel', (event) => {
-    if (modelViewer.hasAttribute('disable-zoom')) {
-      window.scrollBy(0, event.deltaY);
-    }
+    window.scrollBy(0, event.deltaY);
   });
-</script>
 
 <script>
   const toggleButton = document.getElementById('menu-toggle');
