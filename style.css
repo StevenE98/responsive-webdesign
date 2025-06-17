@@ -12,6 +12,11 @@ html, body {
   overflow-x: hidden;
   max-width: 100vw;
 }
+/* Responsive base font size from phone to large screen */
+html {
+  font-size: clamp(16px, calc(16px + 8 * (100vw - 320px) / 1600), 24px);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -252,36 +257,9 @@ body {
   .fade-in-delay-2.visible {
     animation: slideInLeft 0.4s ease-out forwards;
   }
-
   .fade-in-delay-2:not(.visible) {
     animation: slideOutLeft 0.4s ease-in forwards;
   }
-
-/* Desktop font scaling */
-@media (min-width: 1024px) {
-  html {
-    font-size: 18px;
-  }
-}
-
-@media (min-width: 1280px) {
-  html {
-    font-size: 20px;
-  }
-}
-
-@media (min-width: 1536px) {
-  html {
-    font-size: 22px;
-  }
-}
-
-@media (min-width: 1920px) {
-  html {
-    font-size: 24px;
-  }
-}
-
 
 /* Zoom effect for product images */
 .product-image-container {
