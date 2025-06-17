@@ -134,8 +134,8 @@
     camera-controls
     disable-zoom
 
-    camera-orbit="0deg 45deg auto"
-    min-camera-orbit="-45deg 0deg auto"
+    camera-orbit="0deg 0deg auto"
+    min-camera-orbit="-45deg -45deg auto"
     max-camera-orbit="45deg 45deg auto"
 
     class="w-full h-full max-w-[100%] max-h-[100%] object-contain">
@@ -460,14 +460,46 @@ faders.forEach(el => appearOnScroll.observe(el));
 <script>
   const modelViewer = document.getElementById('hikingModel');
 
+  let pitch = 0;
+  let direction = 1;
+  let verticalAnimId;
+
+  function animatePitch() {
+    pitch += 0.5 * direction;
+    if (pitch >= 45) {
+      pitch = 45;
+      direction = -1;
+    } else if (pitch <= -45) {
+      pitch = -45;
+      direction = 1;
+    }
+    modelViewer.cameraOrbit = `0deg ${pitch}deg auto`;
+    verticalAnimId = requestAnimationFrame(animatePitch);
+  }
+
+  function startVerticalRotation() {
+    if (!verticalAnimId) {
+      animatePitch();
+    }
+  }
+
+  function stopVerticalRotation() {
+    if (verticalAnimId) {
+      cancelAnimationFrame(verticalAnimId);
+      verticalAnimId = null;
+    }
+  }
+
   const modelObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) {
         // Reset Kamera und stoppe Rotation
         modelViewer.resetTurntableRotation(); // ⬅ dreht zurück zur Ausgangsposition
         modelViewer.removeAttribute('auto-rotate');
+        stopVerticalRotation();
       } else {
         modelViewer.setAttribute('auto-rotate', '');
+        startVerticalRotation();
       }
     });
   }, { threshold: 0.1 });
