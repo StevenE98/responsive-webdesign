@@ -116,6 +116,7 @@
     alt="3D Wanderstock"
     auto-rotate
     camera-controls
+    disable-zoom
     class="w-full h-full max-w-[100%] max-h-[100%] object-contain">
   </model-viewer>
 </div>
@@ -497,6 +498,13 @@ faders.forEach(el => appearOnScroll.observe(el));
   modelViewer.addEventListener('finished', () => {
     animationFinished = true;
     modelViewer.pause();
+  });
+
+  // Allow page scrolling when mouse wheel is used over the model
+  modelViewer.addEventListener('wheel', (event) => {
+    if (modelViewer.hasAttribute('disable-zoom')) {
+      window.scrollBy(0, event.deltaY);
+    }
   });
 </script>
 
