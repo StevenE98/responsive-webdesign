@@ -276,6 +276,13 @@ body {
   }
 }
 
+@media (min-width: 1920px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+
 /* Zoom effect for product images */
 .product-image-container {
   overflow: hidden;
