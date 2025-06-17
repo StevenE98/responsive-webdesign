@@ -11,6 +11,7 @@ This repository contains a sample responsive web page demonstrating product pres
 2. Make sure all image files and the `hiking_poles.glb` 3D model remain in the same directory as `index.html`.
 3. Open `index.html` in your web browser to view the page. For best results you can serve the files using a local web server.
 
+4. The 3D model loads zoomed in. Adjust the zoom using your mouse wheel or pinch gestures on touch devices.
 ## Required Assets
 
 The page expects several images and a glTF binary (`.glb`) model in the project root:
