@@ -17,7 +17,7 @@
 <body class="bg-white text-black" style="font-family: 'Poppins', sans-serif;">
 
   <!-- Navbar: zentriertes Logo mit horizontalen Buttons darunter -->
-  <header class="bg-black text-white px-6 py-4">
+  <header id="site-header" class="bg-black text-white px-6 py-4">
     <div class="flex justify-between items-center">
 
       <!-- Linke Seite: Logo -->
@@ -519,6 +519,21 @@ faders.forEach(el => appearOnScroll.observe(el));
 
   toggleButton.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+<script>
+  const siteHeader = document.getElementById('site-header');
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const current = window.scrollY;
+    if (current < lastScrollY || current <= 0) {
+      siteHeader.classList.remove('hide');
+    } else if (current > lastScrollY) {
+      siteHeader.classList.add('hide');
+    }
+    lastScrollY = current;
   });
 </script>
 
