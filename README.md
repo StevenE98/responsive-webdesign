@@ -23,3 +23,7 @@ The page expects several images and a glTF binary (`.glb`) model in the project 
 - `hiking_poles.glb` (3D hiking pole model)
 
 These files must be present for the web page to render correctly.
+
+## Binary Assets
+
+All images, PDFs, DOCX, PPTX files and the `.glb` 3D model are stored directly in this repository. The total project size is under 100&nbsp;MB, so using Git LFS is unnecessary. Keeping the assets in Git allows the page to work out-of-the-box when cloning the repo.
