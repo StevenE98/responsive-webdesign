@@ -104,8 +104,23 @@
   setInterval(() => {
     showSlide((currentSlide + 1) % slides.length);
   }, 5000); // automatische Rotation alle 5 Sekunden
-</script>      
+</script>
 
+  <section class="relative w-full h-screen overflow-hidden">
+  <div id="slides" class="w-full h-full relative">
+
+  <!-- Zentrum: 3D-Modell -->
+  <model-viewer
+    id="hikingModel"
+    src="hiking_poles3.glb"
+    alt="3D Wanderstock"
+    auto-rotate
+    camera-controls
+    class="w-full h-full max-w-[100%] max-h-[100%] object-contain">
+  </model-viewer>
+</div>
+
+</section>
 
       <!-- Produkte -->
 
@@ -210,21 +225,6 @@
   </section>
 
 
-  <section class="relative w-full h-screen overflow-hidden">
-  <div id="slides" class="w-full h-full relative">
-
-  <!-- Zentrum: 3D-Modell -->
-  <model-viewer
-    id="hikingModel"
-    src="hiking_poles3.glb"
-    alt="3D Wanderstock"
-    auto-rotate
-    camera-controls
-    class="w-full h-full max-w-[100%] max-h-[100%] object-contain">
-  </model-viewer>
-</div>
-
-</section>
 
 <!-- Rezensionen -->
 <section class="w-full bg-white text-center pt-16 px-2 md:px-20 pb-16">
