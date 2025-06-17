@@ -459,52 +459,6 @@ faders.forEach(el => appearOnScroll.observe(el));
 <script>
   const modelViewer = document.getElementById('hikingModel');
 
-  // Start the model from a front-facing view
-  let pitch = 90;
-  let direction = 1;
-  let verticalAnimId;
-
-  function animatePitch() {
-    pitch += 0.5 * direction;
-    if (pitch >= 135) {
-      pitch = 135;
-      direction = -1;
-    } else if (pitch <= 45) {
-      pitch = 45;
-      direction = 1;
-    }
-    modelViewer.cameraOrbit = `0deg ${pitch}deg auto`;
-    verticalAnimId = requestAnimationFrame(animatePitch);
-  }
-
-  function startVerticalRotation() {
-    if (!verticalAnimId) {
-      animatePitch();
-    }
-  }
-
-  function stopVerticalRotation() {
-    if (verticalAnimId) {
-      cancelAnimationFrame(verticalAnimId);
-      verticalAnimId = null;
-    }
-  }
-
-  const modelObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) {
-        // Reset Kamera und stoppe Rotation
-        modelViewer.resetTurntableRotation(); // ⬅ dreht zurück zur Ausgangsposition
-        modelViewer.removeAttribute('auto-rotate');
-        stopVerticalRotation();
-      } else {
-        modelViewer.setAttribute('auto-rotate', '');
-        startVerticalRotation();
-      }
-    });
-  }, { threshold: 0.1 });
-
-  modelObserver.observe(modelViewer);
 
   // Animation control: play animation on click
   modelViewer.addEventListener('load', () => {
