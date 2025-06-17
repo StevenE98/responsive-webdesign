@@ -18,16 +18,21 @@
 
   <!-- Navbar: zentriertes Logo mit horizontalen Buttons darunter -->
   <header class="bg-black text-white px-6 py-4">
-    <div class="flex justify-between items-center flex-wrap">
+    <div class="flex justify-between items-center">
 
       <!-- Linke Seite: Logo -->
       <div class="flex-shrink-0">
         <img src="nikelogo.jpeg" alt="Nike Logo" class="h-12">
       </div>
 
-      <!-- Navigation zentriert -->
-      <nav class="flex-1">
-        <ul class="flex justify-center gap-6 text-sm">
+      <!-- Hamburger Button (nur mobil) -->
+      <button id="menu-toggle" class="md:hidden text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Navigation -->
+      <nav class="hidden md:flex flex-1 justify-center" id="main-menu">
+        <ul class="flex gap-6 text-sm">
           <li><a href="#" class="hover:underline">Neues</a></li>
           <li><a href="#" class="hover:underline">Herren</a></li>
           <li><a href="#" class="hover:underline">Damen</a></li>
@@ -36,6 +41,17 @@
         </ul>
       </nav>
     </div>
+
+    <!-- Mobile Navigation -->
+    <nav id="mobile-menu" class="md:hidden hidden mt-4">
+      <ul class="flex flex-col items-center gap-4 text-sm">
+        <li><a href="#" class="hover:underline">Neues</a></li>
+        <li><a href="#" class="hover:underline">Herren</a></li>
+        <li><a href="#" class="hover:underline">Damen</a></li>
+        <li><a href="#" class="hover:underline">Kinder</a></li>
+        <li><a href="#" class="hover:underline">Angebote</a></li>
+      </ul>
+    </nav>
   </header>
 
 <!-- Hero Slideshow -->
@@ -117,9 +133,11 @@
     auto-rotate
     camera-controls
     disable-zoom
-    camera-orbit="0deg 90deg auto"
-    min-camera-orbit="-60deg 30deg auto"
-    max-camera-orbit="60deg 150deg auto"
+
+    camera-orbit="0deg 45deg auto"
+    min-camera-orbit="-45deg 45deg auto"
+    max-camera-orbit="45deg 45deg auto"
+
     class="w-full h-full max-w-[100%] max-h-[100%] object-contain">
   </model-viewer>
 </div>
@@ -508,6 +526,15 @@ faders.forEach(el => appearOnScroll.observe(el));
     if (modelViewer.hasAttribute('disable-zoom')) {
       window.scrollBy(0, event.deltaY);
     }
+  });
+</script>
+
+<script>
+  const toggleButton = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  toggleButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
   });
 </script>
 
