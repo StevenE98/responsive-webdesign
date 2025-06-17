@@ -507,8 +507,11 @@ faders.forEach(el => appearOnScroll.observe(el));
 
   // Allow page scrolling when mouse wheel is used over the model
   modelViewer.addEventListener('wheel', (event) => {
-    window.scrollBy(0, event.deltaY);
+   if (modelViewer.hasAttribute('disable-zoom')) {
+      window.scrollBy(0, event.deltaY);
+    }
   });
+</script>
 
 <script>
   const toggleButton = document.getElementById('menu-toggle');
