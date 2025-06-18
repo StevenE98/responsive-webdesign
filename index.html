@@ -524,10 +524,10 @@ faders.forEach(el => appearOnScroll.observe(el));
 
 <script>
   const siteHeader = document.getElementById('site-header');
-  let lastScrollY = window.scrollY;
+  let lastScrollY = window.pageYOffset;
 
   window.addEventListener('scroll', () => {
-    const current = window.scrollY;
+    const current = window.pageYOffset;
     if (current < lastScrollY || current <= 0) {
       siteHeader.classList.remove('hide');
     } else if (current > lastScrollY) {
