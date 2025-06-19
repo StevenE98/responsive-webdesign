@@ -8,7 +8,7 @@ This repository contains a sample responsive web page demonstrating product pres
 ## Usage
 
 1. Clone or download this repository.
-2. Make sure all image files are placed inside the `Bilder` directory in the project root. The `hiking_poles.glb` 3D model should remain next to `index.html`.
+2. Make sure all image files are placed inside the `Bilder` directory in the project root. The `hiking_poles3.glb` 3D model should remain next to `index.html`.
 3. Open `index.html` in your web browser to view the page. For best results you can serve the files using a local web server.
 
 4. The 3D model loads zoomed in. Adjust the zoom using your mouse wheel or pinch gestures on touch devices.
@@ -21,7 +21,7 @@ The page expects several images stored in the `Bilder` folder and a glTF binary 
 - `Bilder/Gemini_Generated_Image_man.jpeg`
 - `Bilder/Gemini_Generated_Image_kind.jpeg`
 - `Bilder/resized_rei1.jpeg`, `Bilder/resized_rei2.jpg`, `Bilder/resized_rei3.jpeg`, `Bilder/resized_rei4.jpeg`, `Bilder/resized_rei5.jpeg`, `Bilder/resized_rei6.jpeg`
-- `hiking_poles.glb` (3D hiking pole model)
+- `hiking_poles3.glb` (3D hiking pole model)
 
 These files must be present for the web page to render correctly.
 
