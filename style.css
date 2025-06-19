@@ -37,7 +37,7 @@ body {
 }
 
   .product-image-container:hover img {
-    transform: scale(4);
+    transform: scale(3);
     transform-origin: top center;
   }
 
