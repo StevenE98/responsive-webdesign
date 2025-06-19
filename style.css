@@ -4,7 +4,8 @@ html, body {
 }
 /* Responsive base font size from phone to large screen */
 html {
-  font-size: clamp(16px, calc(16px + 8 * (100vw - 320px) / 1600), 24px);
+  /* Slightly smaller base font size for all elements */
+  font-size: clamp(14px, calc(14px + 6 * (100vw - 320px) / 1600), 21px);
 }
 
 * {
