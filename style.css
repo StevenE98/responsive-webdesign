@@ -67,18 +67,6 @@ body {
 .hero-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: top;
-}
-
-@media (orientation: landscape) {
-  .hero-image {
-    object-position: center 50%;
-  }
-}
-
-@media (orientation: portrait) {
-  .hero-image {
-    object-position: 50% center;
-  }
 }
