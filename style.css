@@ -74,6 +74,9 @@ body {
 @media (orientation: landscape) {
   .hero-image {
     object-position: center 50%;
+    /* Distort image vertically to show full picture on wide screens */
+    transform: scaleY(0.8);
+    transform-origin: center;
   }
 }
 
