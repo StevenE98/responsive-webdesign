@@ -20,7 +20,13 @@ The page expects several images stored in the `Bilder` folder and a glTF binary 
 - `Bilder/Gemini_Generated_Image_frau.jpeg`
 - `Bilder/Gemini_Generated_Image_man.jpeg`
 - `Bilder/Gemini_Generated_Image_kind.jpeg`
-- `Bilder/resized_rei1.jpeg`, `Bilder/resized_rei2.jpg`, `Bilder/resized_rei3.jpeg`, `Bilder/resized_rei4.jpeg`, `Bilder/resized_rei5.jpeg`, `Bilder/resized_rei6.jpeg`
+- `Bilder/hiking.png`
+- `Bilder/trailrunner.png`
+- `Bilder/crosstrail.png`
+- `Bilder/nordicwalking.png`
+- `Bilder/black diamond vertical.jpeg`
+- `Bilder/makalu lite vertical.jpeg`
+- `Bilder/mountainsmith_lite_vertical2.jpg`
 - `hiking_poles3.glb` (3D hiking pole model)
 
 These files must be present for the web page to render correctly.
