@@ -17,9 +17,9 @@ This repository contains a sample responsive web page demonstrating product pres
 The page expects several images stored in the `Bilder` folder and a glTF binary (`.glb`) model in the project root:
 
 - `Bilder/nikelogo.jpeg`
-- `Bilder/Gemini_Generated_Image_frau.jpeg`
-- `Bilder/Gemini_Generated_Image_man.jpeg`
-- `Bilder/Gemini_Generated_Image_kind.jpeg`
+- `Bilder/AthletinWanderstock.jpeg`
+- `Bilder/AthletWanderstock.jpeg`
+- `Bilder/KindWanderstock.jpeg`
 - `Bilder/hiking.png`
 - `Bilder/trailrunner.png`
 - `Bilder/crosstrail.png`
