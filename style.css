@@ -53,3 +53,10 @@ body {
 #site-header.hide {
   transform: translateY(-100%);
 }
+
+/* Font for category links */
+.category-link {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.05em;
+}
+
