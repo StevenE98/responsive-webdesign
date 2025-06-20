@@ -60,6 +60,10 @@ body {
   letter-spacing: 0.05em;
 }
 
+.slide {
+  background-color: black;
+}
+
 .hero-image {
   width: 100%;
   height: 100%;
