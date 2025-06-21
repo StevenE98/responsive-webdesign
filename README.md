@@ -2,7 +2,7 @@
 
 Dieses Repository enthält eine einfache responsiv gestaltete Produktseite für Wanderstöcke. Die Seite ist in HTML und CSS umgesetzt und nutzt ein kleines Skript, um ein 3D-Modell des Wanderstocks einzubinden.
 
-[**Demo:** [<https://stevene98.github.io/responsive-webdesign/>](https://stevene98.github.io/responsive-webdesign-Wanderstock/)](https://stevene98.github.io/responsive-webdesign-Wanderstock/)
+**Demo:** [<https://stevene98.github.io/responsive-webdesign/>](https://stevene98.github.io/responsive-webdesign-Wanderstock/)
 
 ## Projektübersicht
 
