@@ -1,20 +1,29 @@
-# Responsive Web Design Project
+# Responsive Webdesign – Wanderstock
 
+Dieses Repository enthält eine einfache responsiv gestaltete Produktseite für Wanderstöcke. Die Seite ist in HTML und CSS umgesetzt und nutzt ein kleines Skript, um ein 3D-Modell des Wanderstocks einzubinden.
 
-https://stevene98.github.io/responsive-webdesign/
+**Demo:** <https://stevene98.github.io/responsive-webdesign/>
 
-This repository contains a sample responsive web page demonstrating product presentation for hiking poles. It is written in plain HTML and CSS and includes a small script for basic animations.
+## Projektübersicht
 
-## Usage
+- **index.html** – Hauptseite mit Layout und Einbindung des 3D-Modells
+- **style.css** – Stile für das Layout
+- **Bilder/** – enthält alle benötigten Grafiken
+- **hiking_poles3.glb** – 3D-Modell des Wanderstocks
 
-1. Clone or download this repository.
-2. Make sure all image files are placed inside the `Bilder` directory in the project root. The `hiking_poles3.glb` 3D model should remain next to `index.html`.
-3. Open `index.html` in your web browser to view the page. For best results you can serve the files using a local web server.
+## Installation
 
-4. The 3D model loads zoomed in. Adjust the zoom using your mouse wheel or pinch gestures on touch devices.
-## Required Assets
+1. Repository klonen oder als ZIP-Datei herunterladen.
+2. Alle Bilddateien müssen im Ordner `Bilder` bleiben.
+3. Die Datei `hiking_poles3.glb` befindet sich im Projektstamm neben `index.html`.
 
-The page expects several images stored in the `Bilder` folder and a glTF binary (`.glb`) model in the project root:
+## Nutzung
+
+`index.html` in einem Browser öffnen. Für optimale Ergebnisse kann ein lokaler Webserver verwendet werden. Das 3D-Modell lässt sich mit der Maus oder per Touch-Gesten zoomen und drehen.
+
+## Benötigte Assets
+
+Diese Dateien müssen vorhanden sein, damit die Seite korrekt dargestellt wird:
 
 - `Bilder/nikelogo.jpeg`
 - `Bilder/AthletinWanderstock.jpeg`
@@ -27,10 +36,8 @@ The page expects several images stored in the `Bilder` folder and a glTF binary 
 - `Bilder/black diamond vertical.jpeg`
 - `Bilder/makalu lite vertical.jpeg`
 - `Bilder/mountainsmith_lite_vertical2.jpg`
-- `hiking_poles3.glb` (3D hiking pole model)
+- `hiking_poles3.glb`
 
-These files must be present for the web page to render correctly.
+## Lizenz
 
-## Binary Assets
-
-All images, PDFs, DOCX, PPTX files and the `.glb` 3D model are stored directly in this repository. The total project size is under 100&nbsp;MB, so using Git LFS is unnecessary. Keeping the assets in Git allows the page to work out-of-the-box when cloning the repo.
+Für dieses Projekt ist keine spezielle Lizenz hinterlegt. Die Dateien dürfen zu Lern- und Demonstrationszwecken verwendet werden.
